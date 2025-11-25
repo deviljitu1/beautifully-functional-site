@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
@@ -26,62 +26,63 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-primary/95 backdrop-blur-md shadow-lg"
-          : "bg-primary"
+          ? "bg-card/98 backdrop-blur-md shadow-strong border-b border-border/50"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-6 py-5">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2 animate-fade-in-up">
-            <div className="text-2xl md:text-3xl font-bold text-accent">
-              🍃 Elaichi
-            </div>
-          </div>
+          <button
+            onClick={() => scrollToSection('home')}
+            className="text-3xl font-display font-bold text-foreground hover:text-primary transition-colors"
+          >
+            Elaichi
+          </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-primary-foreground hover:text-accent transition-colors duration-200"
+              className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-primary-foreground hover:text-accent transition-colors duration-200"
+              className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("menu")}
-              className="text-primary-foreground hover:text-accent transition-colors duration-200"
+              className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide"
             >
               Menu
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="text-primary-foreground hover:text-accent transition-colors duration-200"
+              className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-primary-foreground hover:text-accent transition-colors duration-200"
+              className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide"
             >
               Contact
             </button>
             <Button
-              onClick={() => scrollToSection("reservation")}
-              className="bg-accent text-accent-foreground hover:bg-accent/90"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow font-semibold"
+              onClick={() => scrollToSection('reservation')}
             >
-              Reserve Table
+              BOOK A TABLE
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-primary-foreground"
+            className="md:hidden text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -90,43 +91,43 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden pb-6 animate-fade-in-up">
+          <div className="md:hidden pb-6 pt-4 animate-fadeInUp">
             <div className="flex flex-col space-y-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-primary-foreground hover:text-accent transition-colors py-2 text-left"
+                className="text-foreground hover:text-primary transition-colors py-2 text-left font-medium uppercase text-sm tracking-wide"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-primary-foreground hover:text-accent transition-colors py-2 text-left"
+                className="text-foreground hover:text-primary transition-colors py-2 text-left font-medium uppercase text-sm tracking-wide"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("menu")}
-                className="text-primary-foreground hover:text-accent transition-colors py-2 text-left"
+                className="text-foreground hover:text-primary transition-colors py-2 text-left font-medium uppercase text-sm tracking-wide"
               >
                 Menu
               </button>
               <button
                 onClick={() => scrollToSection("gallery")}
-                className="text-primary-foreground hover:text-accent transition-colors py-2 text-left"
+                className="text-foreground hover:text-primary transition-colors py-2 text-left font-medium uppercase text-sm tracking-wide"
               >
                 Gallery
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-primary-foreground hover:text-accent transition-colors py-2 text-left"
+                className="text-foreground hover:text-primary transition-colors py-2 text-left font-medium uppercase text-sm tracking-wide"
               >
                 Contact
               </button>
               <Button
-                onClick={() => scrollToSection("reservation")}
-                className="bg-accent text-accent-foreground hover:bg-accent/90 w-full"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow w-full font-semibold"
+                onClick={() => scrollToSection('reservation')}
               >
-                Reserve Table
+                BOOK A TABLE
               </Button>
             </div>
           </div>

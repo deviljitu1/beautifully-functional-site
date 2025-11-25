@@ -60,21 +60,20 @@ export const Menu = () => {
       : menuItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <section id="menu" className="py-20 bg-muted/30">
+    <section id="menu" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-accent mb-4">
-            Our Menu
+        <div className="text-center mb-16">
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4">Food Menu</p>
+          <h2 className="text-5xl md:text-6xl font-display font-bold mb-6 text-foreground">
+            Most Popular <span className="text-primary">Items</span>
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our diverse collection of vegetarian delicacies, crafted with authentic flavors
+          <p className="text-lg text-muted-foreground font-light">
+            Discover our selection of authentic Indian dishes
           </p>
         </div>
 
         {/* Menu Image Banner */}
-        <div className="mb-12 rounded-2xl overflow-hidden shadow-xl max-w-5xl mx-auto">
+        <div className="mb-16 rounded-2xl overflow-hidden shadow-strong max-w-5xl mx-auto">
           <img
             src={menuSpread}
             alt="Menu dishes"
@@ -82,18 +81,14 @@ export const Menu = () => {
           />
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map((category) => (
             <Button
               key={category}
+              variant={selectedCategory === category ? "default" : "secondary"}
               onClick={() => setSelectedCategory(category)}
-              variant={selectedCategory === category ? "default" : "outline"}
-              className={
-                selectedCategory === category
-                  ? "bg-accent text-accent-foreground hover:bg-accent/90"
-                  : "border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-              }
+              className="capitalize font-semibold px-6"
             >
               {category}
             </Button>
@@ -105,7 +100,7 @@ export const Menu = () => {
           {filteredItems.map((item, index) => (
             <Card
               key={item.id}
-              className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card border-border animate-fade-in-up"
+              className="p-6 hover:shadow-strong transition-all duration-300 hover:-translate-y-1 bg-card border-border animate-fadeInUp"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="flex justify-between items-start mb-3">
@@ -119,20 +114,20 @@ export const Menu = () => {
                     </Badge>
                   )}
                   {item.isPopular && (
-                    <Badge className="bg-accent text-accent-foreground px-2 py-1">
+                    <Badge className="bg-primary text-primary-foreground px-2 py-1">
                       <Star className="w-3 h-3" />
                     </Badge>
                   )}
                 </div>
               </div>
-              <p className="text-muted-foreground text-sm mb-4">
+              <p className="text-muted-foreground text-sm mb-4 font-light">
                 {item.description}
               </p>
               <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-accent">
+                <span className="text-2xl font-display font-bold text-primary">
                   ₹{item.price}
                 </span>
-                <Badge variant="outline" className="border-accent text-accent">
+                <Badge variant="outline" className="border-primary text-primary">
                   {item.category}
                 </Badge>
               </div>

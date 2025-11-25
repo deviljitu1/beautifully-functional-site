@@ -11,25 +11,21 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Leaf className="w-8 h-8 text-accent" />
-              <h3 className="text-2xl font-bold text-accent">Elaichi</h3>
-            </div>
-            <p className="text-primary-foreground/80">
-              Raipur's finest 100% pure vegetarian multi-cuisine restaurant, 
-              serving delicious food with love since 2013.
+    <footer className="bg-card border-t border-border py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div>
+            <h3 className="text-3xl font-display font-bold mb-4 text-foreground">Elaichi</h3>
+            <p className="mb-6 text-muted-foreground font-light">
+              Authentic Indian cuisine crafted with passion and tradition.
             </p>
             <div className="flex gap-4">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent/10 p-2 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="bg-primary/10 p-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -37,7 +33,7 @@ export const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent/10 p-2 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="bg-primary/10 p-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -45,7 +41,7 @@ export const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent/10 p-2 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="bg-primary/10 p-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Twitter className="w-5 h-5" />
               </a>
@@ -53,7 +49,7 @@ export const Footer = () => {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent/10 p-2 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="bg-primary/10 p-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Youtube className="w-5 h-5" />
               </a>
@@ -62,12 +58,12 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-accent">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <button
                   onClick={() => scrollToSection("home")}
-                  className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors font-light"
                 >
                   Home
                 </button>
@@ -75,7 +71,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors font-light"
                 >
                   About Us
                 </button>
@@ -83,7 +79,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("menu")}
-                  className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors font-light"
                 >
                   Menu
                 </button>
@@ -91,7 +87,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("gallery")}
-                  className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors font-light"
                 >
                   Gallery
                 </button>
@@ -101,8 +97,8 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-accent">Contact</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
+            <h4 className="text-lg font-semibold mb-4 text-foreground">Contact</h4>
+            <ul className="space-y-2 text-muted-foreground font-light">
               <li>123 Main Street, Civil Lines</li>
               <li>Raipur, Chhattisgarh 492001</li>
               <li className="pt-2">Phone: +91 771 234 5678</li>
@@ -112,8 +108,8 @@ export const Footer = () => {
 
           {/* Hours */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-accent">Hours</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
+            <h4 className="text-lg font-semibold mb-4 text-foreground">Hours</h4>
+            <ul className="space-y-2 text-muted-foreground font-light">
               <li>Monday - Friday</li>
               <li>11:00 AM - 10:00 PM</li>
               <li className="pt-2">Saturday - Sunday</li>
@@ -122,13 +118,9 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60">
-          <p>
-            © {currentYear} Elaichi Multi Cuisine Marvels. All rights reserved.
-          </p>
-          <p className="mt-2 text-sm">
-            Made with <span className="text-accent">♥</span> for food lovers
+        <div className="border-t border-border pt-8 text-center">
+          <p className="text-muted-foreground font-light">
+            © {currentYear} Elaichi. All rights reserved. | Crafted with love and spices.
           </p>
         </div>
       </div>
