@@ -1,5 +1,6 @@
 import { Heart, Award, Users, Leaf } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import restaurantInterior from "@/assets/restaurant-interior.jpg";
 
 export const About = () => {
   const features = [
@@ -56,26 +57,41 @@ export const About = () => {
         </div>
 
         {/* Story Section */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 bg-card border-border shadow-soft">
-            <h3 className="text-3xl font-display font-bold text-primary mb-6 text-center">
-              Our Story
-            </h3>
-            <div className="space-y-4 text-muted-foreground leading-relaxed font-light">
-              <p>
-                Elaichi Multi Cuisine Marvels began with a simple dream: to create a haven for food lovers 
-                who appreciate the beauty of vegetarian cuisine. Our journey started over a decade ago, 
-                and today we're proud to be one of Raipur's most beloved dining destinations.
-              </p>
-              <p>
-                Our chefs bring years of experience and passion to every dish they create. We source the 
-                freshest ingredients, use authentic spices, and follow traditional cooking methods to ensure 
-                that every meal is not just food, but an experience to remember.
-              </p>
-              <p>
-                Whether you're here for a quick lunch, a family dinner, or a special celebration, we promise 
-                to make your visit memorable with our exceptional food, warm hospitality, and inviting ambiance.
-              </p>
+        <div className="max-w-6xl mx-auto">
+          <Card className="p-0 overflow-hidden bg-card border-border shadow-soft">
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* Image */}
+              <div className="relative h-64 md:h-auto">
+                <img 
+                  src={restaurantInterior} 
+                  alt="Elaichi Restaurant Interior - Beautiful dining space with hanging plants and elegant seating" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 md:bg-gradient-to-l" />
+              </div>
+              
+              {/* Content */}
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <h3 className="text-3xl font-display font-bold text-primary mb-6">
+                  Our Story
+                </h3>
+                <div className="space-y-4 text-muted-foreground leading-relaxed font-light">
+                  <p>
+                    Elaichi Multi Cuisine Marvels began with a simple dream: to create a haven for food lovers 
+                    who appreciate the beauty of vegetarian cuisine. Our journey started over a decade ago, 
+                    and today we're proud to be one of Raipur's most beloved dining destinations.
+                  </p>
+                  <p>
+                    Our chefs bring years of experience and passion to every dish they create. We source the 
+                    freshest ingredients, use authentic spices, and follow traditional cooking methods to ensure 
+                    that every meal is not just food, but an experience to remember.
+                  </p>
+                  <p>
+                    Whether you're here for a quick lunch, a family dinner, or a special celebration, we promise 
+                    to make your visit memorable with our exceptional food, warm hospitality, and inviting ambiance.
+                  </p>
+                </div>
+              </div>
             </div>
           </Card>
         </div>
